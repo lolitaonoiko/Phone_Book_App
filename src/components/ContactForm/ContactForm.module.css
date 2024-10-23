@@ -1,0 +1,26 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin-bottom: 4px;
+
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 8px;
+}
+.input {
+  width: 380px;
+  margin-bottom: 4px;
+}
+.button {
+  width: 120px;
+  margin: 0 auto;
+}
+.error {
+  color: brown;
+  font-size: smaller;
+}
+.label {
+  font-size: 15px;
+  margin-bottom: 4px;
+}
