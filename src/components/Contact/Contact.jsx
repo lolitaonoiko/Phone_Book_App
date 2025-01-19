@@ -1,6 +1,15 @@
-import style from "./Contact.module.css";
+import { useDispatch } from 'react-redux';
+import style from './Contact.module.css';
 
-function Contact({ name, number, id, onDelete }) {
+import { deleteContact } from '../../redux/contactsSlice';
+
+function Contact({ name, number, id }) {
+  const dispatch = useDispatch();
+
+  const deleteFromStore = id => {
+    dispatch(deleteContact(id));
+  };
+
   return (
     <>
       <ul>
@@ -19,12 +28,7 @@ function Contact({ name, number, id, onDelete }) {
           <p>{number}</p>
         </li>
       </ul>
-      <button
-        className={style.button}
-        onClick={() => {
-          onDelete(id);
-        }}
-      >
+      <button className={style.button} onClick={() => deleteFromStore(id)}>
         Delete
       </button>
     </>
