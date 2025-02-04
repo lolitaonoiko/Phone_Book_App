@@ -1,0 +1,17 @@
+.header {
+  background-color: brown;
+  padding: 20px;
+  display: flex;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  gap: 8px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+.menu {
+  display: flex;
+  gap: 15px;
+}

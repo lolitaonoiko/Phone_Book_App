@@ -1,0 +1,6 @@
+.navlink:hover {
+  text-decoration: underline;
+}
+.active {
+  color: white;
+}

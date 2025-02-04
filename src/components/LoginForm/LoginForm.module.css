@@ -1,0 +1,39 @@
+.welcome {
+  margin: 0 auto;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.btn {
+  width: 80px;
+  margin: 0 auto;
+}
+.btn:hover {
+  background-color: brown;
+  color: white;
+}
+.text {
+  display: flex;
+  gap: 4px;
+  margin: 0 auto;
+}
+.link {
+  color: brown;
+}
+.link:hover {
+  color: rgb(234, 13, 13);
+}
+.formBox {
+  padding: 8px;
+  box-shadow: 0px 0px 23px -8px rgba(222, 199, 199, 1);
+
+  border-radius: 15px;
+}
+.formBox:hover {
+  box-shadow: 0px 0px 23px -4px rgba(71, 18, 18, 0.34);
+}
+.error {
+  color: brown;
+}

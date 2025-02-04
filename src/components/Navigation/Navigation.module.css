@@ -1,0 +1,12 @@
+.navlink:hover {
+  text-decoration: underline;
+}
+
+.active {
+  color: white;
+}
+.linkBox {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
