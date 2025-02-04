@@ -26,13 +26,11 @@ const LoginForm = () => {
   });
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const handleSubmit = (values, actions) => {
     console.log(values);
     dispatch(loginThunk(values));
-    // .unwrap()
-    // .then(() => navigate('/'));
+
     actions.resetForm();
   };
 
