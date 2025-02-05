@@ -29,7 +29,7 @@ function ContactList() {
         ))}
       </ul>
       {loading && (
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex' }} className={style.loader}>
           <CircularProgress />
         </Box>
       )}
