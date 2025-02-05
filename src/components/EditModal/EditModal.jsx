@@ -53,6 +53,7 @@ export default function EditModal({
         aria-describedby="transition-modal-description"
         open={open}
         onClose={handleClose}
+        disableEnforceFocus
         closeAfterTransition
         slots={{ backdrop: Backdrop }}
         slotProps={{
@@ -78,6 +79,7 @@ export default function EditModal({
                 value={newName}
                 onChange={e => setNewName(e.target.value)}
                 fullWidth
+                autoFocus
               />
               <TextField
                 fullWidth
@@ -86,6 +88,7 @@ export default function EditModal({
                 variant="outlined"
                 value={newNumber}
                 onChange={e => setNewNumber(e.target.value)}
+                autoFocus
               />
             </Stack>
             <Stack direction="row" spacing={2} className={s.btnBox}>

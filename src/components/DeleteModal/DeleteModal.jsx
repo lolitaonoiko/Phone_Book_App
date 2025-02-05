@@ -39,6 +39,7 @@ export default function DeleteModal({ onDelete }) {
         aria-describedby="transition-modal-description"
         open={open}
         onClose={handleClose}
+        disableEnforceFocus
         closeAfterTransition
         slots={{ backdrop: Backdrop }}
         slotProps={{
