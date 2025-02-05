@@ -64,6 +64,7 @@ export default function DeleteModal({ onDelete }) {
                 color="error"
                 onClick={handleConfirm}
                 style={{ width: '90px' }}
+                disableEnforceFocus
               >
                 Confirm
               </Button>
@@ -72,6 +73,7 @@ export default function DeleteModal({ onDelete }) {
                 color="success"
                 onClick={handleClose}
                 style={{ width: '90px' }}
+                disableEnforceFocus
               >
                 Cancel
               </Button>

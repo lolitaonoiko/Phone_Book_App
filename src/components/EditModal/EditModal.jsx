@@ -95,6 +95,7 @@ export default function EditModal({
                 color="success"
                 onClick={handleConfirm}
                 style={{ width: '90px' }}
+                disableEnforceFocus
               >
                 Save
               </Button>
@@ -103,6 +104,7 @@ export default function EditModal({
                 color="error"
                 onClick={handleClose}
                 style={{ width: '90px' }}
+                disableEnforceFocus
               >
                 Cancel
               </Button>
