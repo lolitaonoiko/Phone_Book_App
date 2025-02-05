@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { lazy } from 'react';
 import { useEffect } from 'react';
 import { refreshUserThunk } from './redux/auth/operations';
-import { selectIsRefreshing } from './redux/auth/selectors';
+import { selectIsRefreshing, selectToken } from './redux/auth/selectors';
 
 import Layout from './components/Layout/Layout';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
@@ -23,12 +23,15 @@ const RegistrationPage = lazy(() =>
 
 function App() {
   const isRefreshing = useSelector(selectIsRefreshing);
+  const token = useSelector(selectToken);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(refreshUserThunk());
-  }, [dispatch]);
+    if (token) {
+      dispatch(refreshUserThunk());
+    }
+  }, [dispatch, token]);
 
   return isRefreshing ? null : (
     <>

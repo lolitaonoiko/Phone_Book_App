@@ -21,6 +21,16 @@ const initialState = {
 const slice = createSlice({
   name: 'auth',
   initialState,
+  reducers: {
+    clearAuthState: state => {
+      state.token = null;
+      state.user = {
+        name: null,
+        email: null,
+      };
+    },
+  },
+
   extraReducers: builder => {
     builder
       .addCase(registerThunk.fulfilled, (state, action) => {
@@ -61,3 +71,5 @@ const slice = createSlice({
 });
 
 export const authReducer = slice.reducer;
+
+export const { clearAuthState } = slice.actions;

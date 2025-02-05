@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { clearAuthState } from './slice';
 
 export const userApi = axios.create({
   baseURL: 'https://connections-api.goit.global',
@@ -68,8 +69,14 @@ export const refreshUserThunk = createAsyncThunk(
     setAuthHeader(savedToken);
     try {
       const { data } = await userApi.get('/users/current');
+
       return data;
     } catch (error) {
+      console.log(error);
+      if (error.response && error.response.status === 401) {
+        thunkAPI.dispatch(clearAuthState());
+      }
+
       return thunkAPI.rejectWithValue(error.message);
     }
   }

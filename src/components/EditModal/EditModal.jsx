@@ -53,7 +53,6 @@ export default function EditModal({
         aria-describedby="transition-modal-description"
         open={open}
         onClose={handleClose}
-        disableEnforceFocus
         closeAfterTransition
         slots={{ backdrop: Backdrop }}
         slotProps={{
@@ -63,7 +62,7 @@ export default function EditModal({
         }}
       >
         <Fade in={open}>
-          <Box sx={style} className={s.modal} inert>
+          <Box sx={style} className={s.modal}>
             <Typography
               id="transition-modal-title"
               variant="h6"
@@ -95,7 +94,6 @@ export default function EditModal({
                 color="success"
                 onClick={handleConfirm}
                 style={{ width: '90px' }}
-                disableEnforceFocus
               >
                 Save
               </Button>
@@ -104,7 +102,6 @@ export default function EditModal({
                 color="error"
                 onClick={handleClose}
                 style={{ width: '90px' }}
-                disableEnforceFocus
               >
                 Cancel
               </Button>

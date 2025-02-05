@@ -39,7 +39,6 @@ export default function DeleteModal({ onDelete }) {
         aria-describedby="transition-modal-description"
         open={open}
         onClose={handleClose}
-        disableEnforceFocus
         closeAfterTransition
         slots={{ backdrop: Backdrop }}
         slotProps={{
@@ -49,7 +48,7 @@ export default function DeleteModal({ onDelete }) {
         }}
       >
         <Fade in={open}>
-          <Box sx={style} className={s.modal} inert>
+          <Box sx={style} className={s.modal}>
             <Typography
               id="transition-modal-title"
               variant="h6"
@@ -64,7 +63,6 @@ export default function DeleteModal({ onDelete }) {
                 color="error"
                 onClick={handleConfirm}
                 style={{ width: '90px' }}
-                disableEnforceFocus
               >
                 Confirm
               </Button>
@@ -73,7 +71,6 @@ export default function DeleteModal({ onDelete }) {
                 color="success"
                 onClick={handleClose}
                 style={{ width: '90px' }}
-                disableEnforceFocus
               >
                 Cancel
               </Button>
