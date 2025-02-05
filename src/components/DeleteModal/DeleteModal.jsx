@@ -49,7 +49,7 @@ export default function DeleteModal({ onDelete }) {
         }}
       >
         <Fade in={open}>
-          <Box sx={style} className={s.modal}>
+          <Box sx={style} className={s.modal} inert>
             <Typography
               id="transition-modal-title"
               variant="h6"
