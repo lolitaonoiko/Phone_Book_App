@@ -24,6 +24,12 @@ export default function DeleteModal({ onDelete }) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  React.useEffect(() => {
+    if (open) {
+      document.getElementById('root').setAttribute('aria-hidden', 'false');
+    }
+  }, [open]);
+
   const handleConfirm = () => {
     onDelete();
     handleClose();
