@@ -1,3 +1,8 @@
+.contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .item {
   display: flex;
   gap: 4px;
@@ -8,13 +13,22 @@
 .item:last-child {
   margin-bottom: 0;
 }
-.img {
-  width: 20px;
-  height: 20px;
+.imgTel {
+  border: 1px solid transparent;
 }
-.button {
-  position: absolute;
-  top: 50%;
-  right: 6px;
-  transform: translateY(-50%);
+.imgTel:hover {
+  border: 1px solid green;
+  border-radius: 8px;
+}
+.number {
+  border: 1px solid transparent;
+}
+.imgTel:hover + .number {
+  border-bottom-color: green;
+}
+.btnBox {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
 }

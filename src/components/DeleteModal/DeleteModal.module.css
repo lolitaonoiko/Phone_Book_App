@@ -1,0 +1,13 @@
+.modal {
+  display: flex;
+  border-radius: 15px;
+}
+.text {
+  display: flex;
+  justify-content: center;
+}
+
+.btnBox {
+  display: flex;
+  gap: 9px;
+}

@@ -9,9 +9,14 @@
 .btn {
   width: 80px;
   margin: 0 auto;
+  border: 1px solid rgb(148, 180, 227);
+  color: rgb(81, 133, 210);
+  border-radius: 4px;
+  padding: 11px;
+  background-color: transparent;
 }
 .btn:hover {
-  background-color: brown;
+  background-color: rgb(81, 133, 210);
   color: white;
 }
 .text {
@@ -20,10 +25,10 @@
   margin: 0 auto;
 }
 .link {
-  color: brown;
+  color: rgb(81, 133, 210);
 }
 .link:hover {
-  color: rgb(234, 13, 13);
+  color: rgb(148, 180, 227);
 }
 .formBox {
   padding: 8px;
@@ -36,4 +41,10 @@
 }
 .error {
   color: brown;
+
+  font-size: 10px;
+  padding-left: 2px;
+}
+.inpt {
+  border-color: rgb(140, 140, 143);
 }

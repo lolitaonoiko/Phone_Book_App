@@ -3,14 +3,14 @@
   gap: 15px;
   align-items: center;
 }
+
 .btn {
-  display: flex;
-  align-items: center;
-  background: none;
-  border: 1px solid black;
-  padding: 3px;
+  color: black;
+
+  padding: 11px;
+  background-color: transparent;
+  font-size: 15px;
 }
 .btn:hover {
-  color: white;
-  border-color: white;
+  color: rgb(124, 173, 219);
 }

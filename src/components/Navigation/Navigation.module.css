@@ -1,7 +1,10 @@
 .navlink:hover {
-  text-decoration: underline;
+  color: rgb(124, 173, 219);
 }
-
+.navlink {
+  padding-top: 11px;
+  padding-bottom: 11px;
+}
 .active {
   color: white;
 }

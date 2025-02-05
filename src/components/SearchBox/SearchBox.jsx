@@ -10,9 +10,10 @@ function SearchBox() {
   const filterValue = useSelector(filtersValue);
   return (
     <div className={style.box}>
-      <p className={style.text}>Find contacts by name</p>
+      <p>Find contacts by name or number</p>
 
       <input
+        className={style.inp}
         type="text"
         value={filterValue}
         onChange={e => dispatch(changeFilter(e.target.value))}
