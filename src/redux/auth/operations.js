@@ -67,15 +67,14 @@ export const refreshUserThunk = createAsyncThunk(
     if (!savedToken) {
       return thunkAPI.rejectWithValue('Token is not exist');
     }
-    setAuthHeader(savedToken);
     try {
+      setAuthHeader(savedToken);
       const { data } = await userApi.get('/users/current');
       return data;
     } catch (error) {
       if (error.response?.status === 401) {
         clearAuthHeader();
         thunkAPI.dispatch(clearAuthState());
-        console.log(userApi.defaults.headers.common.Authorization);
 
         return thunkAPI.rejectWithValue('Unauthorized token cleared');
       }
