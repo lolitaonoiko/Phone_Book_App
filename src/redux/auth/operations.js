@@ -75,6 +75,7 @@ export const refreshUserThunk = createAsyncThunk(
       if (error.response?.status === 401) {
         clearAuthHeader();
         thunkAPI.dispatch(clearAuthState());
+        return thunkAPI.rejectWithValue('Unauthorized token cleared');
       }
 
       return thunkAPI.rejectWithValue(error.message);
