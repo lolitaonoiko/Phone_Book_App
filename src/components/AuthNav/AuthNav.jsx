@@ -10,7 +10,7 @@ const AuthNav = () => {
       <NavLink className={classNavLink} to="/register">
         Registration
       </NavLink>
-      <NavLink className={classNavLink} to="login">
+      <NavLink className={classNavLink} to="/login">
         Log In
       </NavLink>
     </>

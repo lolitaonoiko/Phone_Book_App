@@ -11,6 +11,10 @@ export const setAuthHeader = token => {
   userApi.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
+export const clearAuthHeader = () => {
+  delete userApi.defaults.headers.common.Authorization;
+};
+
 export const loginThunk = createAsyncThunk(
   'auth/login',
   async (credentials, thunkAPI) => {
@@ -19,8 +23,6 @@ export const loginThunk = createAsyncThunk(
       setAuthHeader(data.token);
       return data;
     } catch (error) {
-      console.log(error);
-
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -35,9 +37,7 @@ export const registerThunk = createAsyncThunk(
       setAuthHeader(data.token);
       return data;
     } catch (error) {
-      console.log(error);
-
-      if (error.response.data.code === 11000) {
+      if (error.response?.data?.code === 11000) {
         toast.error('User already exist');
         return thunkAPI.rejectWithValue(error.message);
       }
@@ -51,7 +51,8 @@ export const logoutThunk = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const { data } = await userApi.post('/users/logout');
-
+      clearAuthHeader();
+      thunkAPI.dispatch(clearAuthState());
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -69,11 +70,10 @@ export const refreshUserThunk = createAsyncThunk(
     setAuthHeader(savedToken);
     try {
       const { data } = await userApi.get('/users/current');
-
       return data;
     } catch (error) {
-      console.log(error);
-      if (error.response && error.status === 401) {
+      if (error.response?.status === 401) {
+        clearAuthHeader();
         thunkAPI.dispatch(clearAuthState());
       }
 

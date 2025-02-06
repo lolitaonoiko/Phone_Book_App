@@ -12,6 +12,7 @@ import { selectIsRefreshing, selectToken } from './redux/auth/selectors';
 import Layout from './components/Layout/Layout';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import RestrictedRoute from './components/RestrictedRoute/RestrictedRoute';
+import { Box, CircularProgress } from '@mui/material';
 
 const ContactsPage = lazy(() => import('./pages/ContactsPage/ContactsPage'));
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
@@ -33,7 +34,11 @@ function App() {
     }
   }, [dispatch, token]);
 
-  return isRefreshing ? null : (
+  return isRefreshing ? (
+    <Box sx={{ display: 'flex' }} className="loader">
+      <CircularProgress />
+    </Box>
+  ) : (
     <>
       <Layout>
         <Routes>
