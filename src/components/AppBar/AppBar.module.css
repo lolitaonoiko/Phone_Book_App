@@ -1,5 +1,5 @@
 .header {
-  background-color: rgb(104, 132, 192);
+  background-color: rgb(229, 232, 239);
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 20px;
@@ -12,7 +12,7 @@
   top: 0;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgb(56, 64, 138);
+  border-bottom: 1px solid rgb(151, 151, 156);
   z-index: 999;
 }
 .menu {
