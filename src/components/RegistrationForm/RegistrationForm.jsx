@@ -1,5 +1,4 @@
 import { Field, Formik, Form, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
 
 import { useDispatch } from 'react-redux';
 import { registerThunk } from '../../redux/auth/operations';
@@ -7,22 +6,8 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import style from './RegistrationForm.module.css';
 import { useId } from 'react';
+import { ValidationSchema } from '../../validation/registrSchema';
 
-const ValidationSchema = Yup.object().shape({
-  name: Yup.string()
-    .matches(
-      /^[A-Za-zА-Яа-яЁёЇїІіЄєҐґ']+\s[A-Za-zА-Яа-яЁёЇїІіЄєҐґ']+$/,
-      'Enter first and last name separated'
-    )
-    .required('Required'),
-  email: Yup.string()
-    .matches(/^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/, 'Invalid email format')
-    .required('Required'),
-  password: Yup.string()
-    .min(8, 'Too short password')
-    .max(50, 'Too long password')
-    .required('Required'),
-});
 const initialValues = {
   name: '',
   email: '',
@@ -55,7 +40,7 @@ const RegistrationForm = () => {
       .then(() => navigate('/'));
     actions.resetForm();
   };
-  // sasha@spivak.ua
+
   return (
     <div className={style.formBox}>
       <Formik
